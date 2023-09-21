@@ -1,13 +1,24 @@
 package se.systementor.startStreams.models;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Movie {
     private int id;
+
+    public Movie(int id, String title, int releaseYear, String director, Iterable<Actor> actors) {
+        this.id = id;
+        this.title = title;
+        this.releaseYear = releaseYear;
+        this.director = director;
+        actors.forEach(this.actors::add);
+    }
+
     private String title;
     private int releaseYear;
     private String director;
-    private List<Actor> actors;
+    private List<Actor> actors = new ArrayList<>();
     public int getId() {
         return id;
     }

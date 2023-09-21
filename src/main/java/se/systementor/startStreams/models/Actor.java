@@ -2,7 +2,14 @@ package se.systementor.startStreams.models;
 
 public class Actor {
    private int id;
-   private String name;
+
+    public Actor(int id, String name, int birthyear) {
+        this.id = id;
+        this.name = name;
+        this.birthyear = birthyear;
+    }
+
+    private String name;
    private int birthyear;
     public int getId() {
         return id;
